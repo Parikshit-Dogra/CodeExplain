@@ -60,7 +60,7 @@ Ollama lets you run models completely offline on your own computer.
 2. Open your `.env` file.
 3. Edit the `OLLAMA_MODEL` line to match:
    ```
-   OLLAMA_MODEL=llama3.2
+   OLLAMA_MODEL=model_name
    ```
 4. Select **Ollama** from the sidebar dropdown in the Streamlit app.
 
@@ -70,7 +70,7 @@ LM Studio is another local AI manager with a graphical interface.
 2. Go to the **Local Server** tab in LM Studio and click **Start Server**.
 3. Edit the `LMSTUDIO_MODEL` line in `.env` to match the exact name of the loaded model:
    ```
-   LMSTUDIO_MODEL=gemma4-e4b
+   LMSTUDIO_MODEL=model_name
    ```
 4. Select **LM Studio** from the sidebar dropdown in the Streamlit app.
 
