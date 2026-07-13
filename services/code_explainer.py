@@ -30,10 +30,14 @@ class CodeExplainerService:
         """
         Generates an explanation for the given code.
         """
+        target_language_prompt = code_language
+        if code_language == "Auto-detect":
+            target_language_prompt = "Auto-detect (You must identify the programming language)"
+
         prompt = CODE_EXPLANATION_PROMPT.format(
             language=language,
             difficulty=difficulty,
-            code_language=code_language,
+            code_language=target_language_prompt,
             code=code
         )
         

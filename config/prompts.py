@@ -11,6 +11,7 @@ Keep explanations beginner friendly.
 
 Required Output Format (Return ONLY a raw valid JSON object matching this structure without any markdown formatting like ```json):
 {{
+ "detected_language": "Python",
  "summary": "Brief summary of the code",
  "plain_english": "Plain English explanation for beginners",
  "line_by_line": [

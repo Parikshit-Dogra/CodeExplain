@@ -28,7 +28,7 @@ quiz_difficulty = st.sidebar.selectbox(
 # --- Main Area ---
 code_language = st.selectbox(
     "Code Language",
-    ["Python", "C++", "Java", "JavaScript", "C", "Go"]
+    ["Auto-detect", "Python", "C++", "Java", "JavaScript", "C", "Go"]
 )
 
 code_input = st.text_area("Paste your code here", height=300)
@@ -54,6 +54,8 @@ if st.button("Explain Code"):
                 
                 if explanation:
                     st.success("Explanation generated successfully!")
+                    
+                    st.info(f"**Detected Language:** {explanation.detected_language}")
                     
                     st.markdown("---")
                     st.header("📝 Summary")
