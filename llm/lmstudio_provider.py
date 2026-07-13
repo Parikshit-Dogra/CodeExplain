@@ -1,12 +1,12 @@
 from openai import OpenAI
 from .base_llm import BaseLLM
-from config.settings import LMSTUDIO_URL, LOCAL_MODEL
+from config.settings import LMSTUDIO_URL, LMSTUDIO_MODEL
 
 class LMStudioProvider(BaseLLM):
     def __init__(self):
         # LM Studio uses an OpenAI-compatible API
         self.client = OpenAI(base_url=LMSTUDIO_URL, api_key="lm-studio")
-        self.model = LOCAL_MODEL
+        self.model = LMSTUDIO_MODEL
 
     def generate(self, prompt: str) -> str:
         try:

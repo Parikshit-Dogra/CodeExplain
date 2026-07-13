@@ -1,14 +1,14 @@
 import os
 from google import genai
 from .base_llm import BaseLLM
-from config.settings import GEMINI_API_KEY
+from config.settings import GEMINI_API_KEY, GEMINI_MODEL
 
 class GeminiProvider(BaseLLM):
     def __init__(self):
         if not GEMINI_API_KEY:
             raise ValueError("GEMINI_API_KEY is not set in the environment.")
         self.client = genai.Client(api_key=GEMINI_API_KEY)
-        self.model_id = 'gemini-2.5-flash' # Good default model for general tasks
+        self.model_id = GEMINI_MODEL
 
     def generate(self, prompt: str) -> str:
         try:

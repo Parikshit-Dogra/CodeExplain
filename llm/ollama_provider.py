@@ -1,12 +1,12 @@
 import requests
 import json
 from .base_llm import BaseLLM
-from config.settings import OLLAMA_URL, LOCAL_MODEL
+from config.settings import OLLAMA_URL, OLLAMA_MODEL
 
 class OllamaProvider(BaseLLM):
     def __init__(self):
         self.url = f"{OLLAMA_URL.rstrip('/')}/api/generate"
-        self.model = LOCAL_MODEL
+        self.model = OLLAMA_MODEL
 
     def generate(self, prompt: str) -> str:
         payload = {
