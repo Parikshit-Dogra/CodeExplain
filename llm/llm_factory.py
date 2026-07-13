@@ -22,7 +22,7 @@ def get_llm_provider(provider_name: str = None) -> BaseLLM:
         return GeminiProvider()
     elif provider == "ollama":
         return OllamaProvider()
-    elif provider in ["lmstudio", "lm_studio", "lm-studio"]:
+    elif provider in ["lmstudio", "lm_studio", "lm-studio", "lm studio"]:
         return LMStudioProvider()
     else:
         raise ValueError(f"Unsupported model provider: {provider}")
