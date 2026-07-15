@@ -27,17 +27,52 @@ Required Output Format (Return ONLY a raw valid JSON object matching this struct
    "Use better variable names",
    "Avoid nested loops"
  ],
- "translation": "Translate the explanation into {language}.",
- "quiz": [
-   "Q1: What is the purpose of this loop?",
-   "Q2: Why is a dictionary used?"
- ]
+ "translation": "Translate the explanation into {language}."
 }}
 
 Context:
 Language of Explanation: {language}
 Quiz Difficulty: {difficulty}
 Target Code Language: {code_language}
+
+Code to Explain:
+{code}
+"""
+
+QUIZ_GENERATION_PROMPT = """
+You are an expert programming tutor.
+Generate an interactive Multiple Choice Question (MCQ) quiz for the provided code snippet.
+The questions MUST be strictly related to the code snippet and should be comprehension questions that test the user's understanding of how the code works.
+
+Rules:
+1. Generate EXACTLY 3 questions.
+2. Provide EXACTLY 4 options for each question.
+3. Only ONE option should be correct.
+4. For EACH option, provide a layman explanation of why it is correct or incorrect.
+
+Required Output Format (Return ONLY a raw valid JSON object matching this structure without any markdown formatting like ```json):
+{{
+  "questions": [
+    {{
+      "question": "What does the function `calculate_sum` do?",
+      "options": [
+        {{
+          "text": "It calculates the product.",
+          "is_correct": false,
+          "explanation": "No, it uses the + operator which means addition, not multiplication."
+        }},
+        {{
+          "text": "It calculates the sum of the inputs.",
+          "is_correct": true,
+          "explanation": "Yes! The function name and the + operator indicate it adds the numbers together."
+        }}
+      ]
+    }}
+  ]
+}}
+
+Context:
+Quiz Difficulty: {difficulty}
 
 Code to Explain:
 {code}
