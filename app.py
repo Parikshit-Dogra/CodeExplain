@@ -26,10 +26,7 @@ quiz_difficulty = st.sidebar.selectbox(
 )
 
 # --- Main Area ---
-code_language = st.selectbox(
-    "Code Language",
-    ["Auto-detect", "Python", "C++", "Java", "JavaScript", "C", "Go"]
-)
+code_language = "Auto-detect"
 
 code_input = st.text_area("Paste your code here", height=300)
 
