@@ -74,8 +74,8 @@ if "explanation" in st.session_state:
     st.write(explanation.summary)
     
     st.markdown("---")
-    st.header("Plain English")
-    st.write(explanation.plain_english)
+    st.header("Layman Explanation")
+    st.write(explanation.layman_explanation)
     
     if explanation.translation and language != "English":
         st.markdown("---")

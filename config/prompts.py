@@ -13,7 +13,7 @@ Required Output Format (Return ONLY a raw valid JSON object matching this struct
 {{
  "detected_language": "Python",
  "summary": "Brief summary of the code",
- "plain_english": "Plain English explanation for beginners",
+ "layman_explanation": "Layman explanation for beginners",
  "line_by_line": [
    {{
      "line_number": 1,
