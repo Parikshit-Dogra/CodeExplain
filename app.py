@@ -5,7 +5,7 @@ import traceback
 
 st.set_page_config(page_title="CodeExplain - Plain-English Code Tutor", layout="wide")
 
-st.title("👨‍🏫 CodeExplain: Plain-English Code Tutor")
+st.title("CodeExplain")
 
 # --- Left Panel ---
 st.sidebar.title("Settings")
@@ -17,7 +17,11 @@ provider = st.sidebar.selectbox(
 
 language = st.sidebar.selectbox(
     "Explanation Language",
-    ["English", "Hinglish"]
+    [
+        "English", "Hinglish", "Hindi", "Spanish", "French", "German", 
+        "Chinese", "Japanese", "Korean", "Russian", "Portuguese", 
+        "Italian", "Arabic", "Bengali", "Urdu", "Tamil", "Telugu"
+    ]
 )
 
 quiz_difficulty = st.sidebar.selectbox(
@@ -66,38 +70,38 @@ if "explanation" in st.session_state:
     st.info(f"**Detected Language:** {explanation.detected_language}")
     
     st.markdown("---")
-    st.header("📝 Summary")
+    st.header("Summary")
     st.write(explanation.summary)
     
     st.markdown("---")
-    st.header("📖 Plain English")
+    st.header("Plain English")
     st.write(explanation.plain_english)
     
     if explanation.translation and language != "English":
         st.markdown("---")
-        st.header(f"🌐 Translation ({language})")
+        st.header(f"Translation ({language})")
         st.write(explanation.translation)
     
     st.markdown("---")
-    st.header("🔍 Line-by-line")
+    st.header("Line-by-line")
     for line_data in explanation.line_by_line:
         st.markdown(f"**Line {line_data.line_number}**: `{line_data.code}`")
         st.markdown(f"> {line_data.explanation}")
     
     st.markdown("---")
-    st.header("⏱️ Complexity")
+    st.header("Complexity")
     st.subheader("Time Complexity")
     st.write(explanation.time_complexity)
     st.subheader("Space Complexity")
     st.write(explanation.space_complexity)
     
     st.markdown("---")
-    st.header("💡 Suggested Improvements")
+    st.header("Suggested Improvements")
     for imp in explanation.improvements:
         st.markdown(f"- {imp}")
 
 st.markdown("---")
-st.header("🧠 Interactive Quiz")
+st.header("Interactive Quiz")
 if st.button("Generate Quiz"):
     if provider == "Select Provider...":
         st.warning("Please select a model provider from the settings (Left Panel).")
@@ -136,7 +140,7 @@ if "current_quiz" in st.session_state:
             
             st.write(f"**Your Answer:** {selected_option.text}")
             if selected_option.is_correct:
-                st.success("Correct! 🎉")
+                st.success("Correct!")
             else:
                 st.error("Incorrect.")
             
