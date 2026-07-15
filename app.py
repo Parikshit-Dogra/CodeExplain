@@ -75,7 +75,7 @@ if "explanation" in st.session_state:
     
     st.markdown("---")
     st.header("Layman Explanation")
-    st.write(explanation.layman_explanation)
+    st.write(getattr(explanation, "layman_explanation", getattr(explanation, "plain_english", "Please re-generate the explanation.")))
     
     if explanation.translation and language != "English":
         st.markdown("---")
