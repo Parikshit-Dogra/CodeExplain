@@ -66,7 +66,7 @@ Ollama lets you run models completely offline on your own computer.
 
 ### 3. LM Studio (Local)
 LM Studio is another local AI manager with a graphical interface.
-1. Open LM Studio, search for a model (like `gemma4-e4b`), download it, and load it.
+1. Open LM Studio, search for a model (like `gemma4-e2b`), download it, and load it.
 2. Go to the **Local Server** tab in LM Studio and click **Start Server**.
 3. Edit the `LMSTUDIO_MODEL` line in `.env` to match the exact name of the loaded model:
    ```
