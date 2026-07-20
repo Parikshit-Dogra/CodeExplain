@@ -3,7 +3,7 @@ import streamlit as st
 from services.code_explainer import CodeExplainerService
 import traceback
 
-st.set_page_config(page_title="CodeExplain - Plain-English Code Tutor", layout="wide")
+st.set_page_config(page_title="CodeExplain - Code in Laymen Tutor", layout="wide")
 
 st.title("CodeExplain")
 
