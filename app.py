@@ -10,9 +10,12 @@ import streamlit as st
 from services.code_explainer import CodeExplainerService
 import traceback
 
+<<<<<<< HEAD
 # 1. Page Configuration
 # Set up the basic properties of the Streamlit web page, like the title and layout style.
-st.set_page_config(page_title="CodeExplain - Plain-English Code Tutor", layout="wide")
+=======
+st.set_page_config(page_title="CodeExplain - Code in Laymen Tutor", layout="wide")
+>>>>>>> f3d96559bf44ba1c9fbd55d1243183bea1d93805
 
 st.title("CodeExplain")
 
