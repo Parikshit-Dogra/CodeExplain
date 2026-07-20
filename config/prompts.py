@@ -1,3 +1,12 @@
+"""
+This module contains the raw string templates used to prompt the Large Language Models (LLMs).
+These prompts define the exact persona, rules, and expected JSON output structure for the LLM.
+By keeping prompts in a separate configuration file, we can easily tweak the AI's behavior 
+without modifying the core application logic in the 'services' folder.
+"""
+
+# The primary prompt used for explaining code snippets.
+# It enforces a strict JSON schema that maps directly to our ResponseSchema Pydantic model.
 CODE_EXPLANATION_PROMPT = """
 You are an expert programming tutor.
 Explain code for beginners.
@@ -39,6 +48,8 @@ Code to Explain:
 {code}
 """
 
+# The prompt used to generate multiple-choice quizzes.
+# It maps directly to our QuizSchema Pydantic model.
 QUIZ_GENERATION_PROMPT = """
 You are an expert programming tutor.
 Generate an interactive Multiple Choice Question (MCQ) quiz for the provided code snippet.
