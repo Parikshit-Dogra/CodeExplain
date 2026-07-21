@@ -52,6 +52,7 @@ MODEL_PROVIDER = get_env_or_secret("MODEL_PROVIDER", "").lower()
 # Local model configurations
 OLLAMA_MODEL = get_env_or_secret("OLLAMA_MODEL", "llama3")
 OLLAMA_URL = get_env_or_secret("OLLAMA_URL", "http://localhost:11434")
+OLLAMA_TIMEOUT = int(get_env_or_secret("OLLAMA_TIMEOUT", "300"))
 
 LMSTUDIO_MODEL = get_env_or_secret("LMSTUDIO_MODEL", "gemma4-e4b")
 LMSTUDIO_URL = get_env_or_secret("LMSTUDIO_URL", "http://localhost:1234/v1")

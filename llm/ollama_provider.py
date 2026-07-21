@@ -8,7 +8,7 @@ HTTP requests to interact with that API to generate responses.
 import requests
 import json
 from .base_llm import BaseLLM
-from config.settings import OLLAMA_URL, OLLAMA_MODEL
+from config.settings import OLLAMA_URL, OLLAMA_MODEL, OLLAMA_TIMEOUT
 
 class OllamaProvider(BaseLLM):
     """
@@ -45,8 +45,8 @@ class OllamaProvider(BaseLLM):
         }
         
         try:
-            # Make the HTTP POST request to the Ollama instance with a 120-second timeout
-            response = requests.post(self.url, json=payload, timeout=120)
+            # Make the HTTP POST request to the Ollama instance with the configured timeout
+            response = requests.post(self.url, json=payload, timeout=OLLAMA_TIMEOUT)
             
             # Raise an HTTPError if the HTTP request returned an unsuccessful status code (e.g. 404 or 500)
             response.raise_for_status()

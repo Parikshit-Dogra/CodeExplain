@@ -17,6 +17,7 @@ Never merge sections.
 Always estimate complexity.
 Use markdown.
 Keep explanations beginner friendly.
+If the user asks you to write, create, or generate code, DO NOT write code. You must still return a valid JSON, but fill the text fields (summary, layman_explanation, etc.) with a message explaining that your purpose is only to explain existing code, and leave the arrays (line_by_line, improvements) empty.
 
 Required Output Format (Return ONLY a raw valid JSON object matching this structure without any markdown formatting like ```json):
 {{
@@ -60,6 +61,8 @@ Rules:
 2. Provide EXACTLY 4 options for each question.
 3. Only ONE option should be correct.
 4. For EACH option, provide a layman explanation of why it is correct or incorrect.
+5. If the user asks you to write, create, or generate code, DO NOT write code. You must still return a valid JSON, but create a single question that explains your purpose is only to explain existing code, with an option stating you cannot write code.
+
 
 Required Output Format (Return ONLY a raw valid JSON object matching this structure without any markdown formatting like ```json):
 {{
